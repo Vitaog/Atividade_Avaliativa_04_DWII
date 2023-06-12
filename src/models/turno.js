@@ -1,16 +1,16 @@
 const Sequelize = require('sequelize');
 const database = require('../db');
 
-const Turno = sequelize.define(
+const Turno = database.define(
     'turno',
     {
         id: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true,
         },
         turno: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
         },
     },
