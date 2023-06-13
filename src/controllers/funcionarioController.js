@@ -26,6 +26,7 @@ exports.cadastroFuncionario = async (req, res) => {
             turnoId: parseInt(turnoId),
             salarioInicial,
             valorHora,
+            salarioMinimo: parseInt(salarioMinimo)
         });
 
         res.redirect("/funcionarios");
@@ -91,6 +92,7 @@ exports.updateFuncionario = async (req, res) => {
         funcionario.turnoId = parseInt(turnoId);
         funcionario.valorHora = valorHora;
         funcionario.salarioInicial = salarioInicial
+        funcionario.salarioMinimo = parseInt(salarioMinimo)
 
         // Salve as alterações no banco de dados
         await funcionario.save();
