@@ -9,37 +9,40 @@
 </head>
 
 <body>
-    <nav>
-        <ul class="nav">
-            <li class="li-nav"><a href="/" class="a-nav">Home</a></li>
-            <li class="li-nav"><a href="/cadastro" class="a-nav">Cadastrar</a></li>
-            <li class="li-nav"><a href="#" class="a-nav">Teste</a></li>
-        </ul>
-    </nav>
+    <%- include('partials/navbar') %>
+
     <div class="container">
 
         <h1>Cadastro de Usuário</h1>
         <form action="/" method="POST">
-            <label for="nome">Nome: </label>
-            <input type="text" id="nome" name="nome" required><br><br>
+            <div>
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
     
-            <label for="categoria">Função:</label>
-            <select id="categoria" name="categoria">
-                <option value="Selecione">--Selecione--</option>
-                <option value="G">G</option>
-                <option value="F">F</option>
-            </select><br><br>
+            <div>
+                <label for="categoria">Função:</label>
+                <select id="categoria" name="categoria">
+                    <option value="Selecione">--Selecione--</option>
+                    <option value="G">G</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
     
-            <label for="turno">Função:</label>
-            <select id="turno" name="turno">
-                <option value="Selecione">--Selecione--</option>
-                <option value="M">M</option>
-                <option value="V">V</option>
-                <option value="N">N</option>
-            </select><br><br>
+            <div>
+                <label for="turno">Turno:</label>
+                <select id="turno" name="turno">
+                    <option value="Selecione">--Selecione--</option>
+                    <option value="M">M</option>
+                    <option value="V">V</option>
+                    <option value="N">N</option>
+                </select>
+            </div>
     
-            <label for="horasTrabalhadas">Horas Trabalhadas</label>
-            <input type="text" id="horasTrabalhadas" name="horasTrabalhadas"><br><br>
+            <div>
+                <label for="horasTrabalhadas">Horas Trabalhadas:</label>
+                <input type="text" id="horasTrabalhadas" name="horasTrabalhadas">
+            </div>
         </form>
     </div>
 </body>

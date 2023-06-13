@@ -14,20 +14,10 @@
     background-color: rgba(128, 128, 128, 0.728);
 }
 
-.home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 95vh;
-}
-
-p {
-    font-size: 100px;
-}
-
 .li-nav {
-    width: 10%;
+    /* width: 15%; */
+    margin: 0 5px;
+    padding: 0 5px;
     text-align: center;
 }
 
@@ -41,3 +31,52 @@ p {
     color: white;
 }
 
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 95vh;
+}
+
+.container {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    min-height: 60vh;
+    margin: 10vh auto 0;
+    padding: 2px;
+}
+
+h1 {
+    margin: 5vh 0;
+}
+
+.container > form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container > form > div {
+    display: block;
+    margin: 10px 0;
+}
+
+
+.container > form > div > label {
+    display: inline-block;
+    width: 140px;
+    font-weight: bold;
+}
+
+.container > form > div > input {
+    width: 170px;
+}
+
+.container > form > div > select {
+    width: 170px;
+    text-align: center;
+}
