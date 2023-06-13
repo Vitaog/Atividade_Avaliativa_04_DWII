@@ -32,4 +32,29 @@ exports.cadastroFuncionario = async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Erro ao criar o funcionário' });
     }
-}
+};
+
+exports.getFuncionarios = async (req,res) => {
+    try {
+        const funcionarios = await Funcionario.findAll();
+        res.send(funcionarios);
+    } catch (error) {
+        res.status(500).send('Erro ao buscar os funcionários');
+    }
+};
+
+exports.getFuncionarioById = async (req, res) => {
+    try {
+      const { id } = req.params;
+      const funcionario = await Funcionario.findByPk(id);
+  
+      if (!funcionario) {
+        return res.status(404).json({ error: 'Funcionário não encontrado' });
+      }
+  
+      res.status(200).json(funcionario);
+    } catch (error) {
+      res.status(500).json({ error: 'Erro ao buscar o funcionário' });
+    }
+  };
+  
