@@ -81,6 +81,17 @@ h1 {
     text-align: center;
 }
 
+.div-btn {
+    display: flex !important;
+    justify-content: center;
+}
+
+.div-btn > button {
+    display: inline;
+    width: 35%;
+    margin: 2vh 0;
+}
+
 .lista {
     background-color: rgba(128, 128, 128, 0.644);
     display: flex;
