@@ -5,7 +5,7 @@ const funcionarioController = require("./controllers/funcionarioController");
 const categoriaController = require("./controllers/categoriaController");
 const turnoController = require("./controllers/turnoController");
 
-router.get("/funcionarios/", funcionarioController.getFuncionarios);
+router.get("/funcionarios", funcionarioController.getFuncionarios);
 
 router.get("/funcionarios/:id", funcionarioController.getFuncionarioById);
 
