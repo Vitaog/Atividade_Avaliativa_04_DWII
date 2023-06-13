@@ -14,6 +14,9 @@ const Turno = database.define(
             allowNull: false,
         },
     },
+    {
+        timestamps: false,
+    }
 );
 
 module.exports = Turno;
