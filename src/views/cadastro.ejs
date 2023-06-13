@@ -11,40 +11,47 @@
 <body>
     <%- include('partials/navbar') %>
 
-    <div class="container">
+        <div class="container">
 
-        <h1>Cadastro de Usuário</h1>
-        <form action="/" method="POST">
-            <div>
-                <label for="nome">Nome: </label>
-                <input type="text" id="nome" name="nome" required>
-            </div>
-    
-            <div>
-                <label for="categoria">Função:</label>
-                <select id="categoria" name="categoria">
-                    <option value="Selecione">--Selecione--</option>
-                    <option value="G">G</option>
-                    <option value="F">F</option>
-                </select>
-            </div>
-    
-            <div>
-                <label for="turno">Turno:</label>
-                <select id="turno" name="turno">
-                    <option value="Selecione">--Selecione--</option>
-                    <option value="M">M</option>
-                    <option value="V">V</option>
-                    <option value="N">N</option>
-                </select>
-            </div>
-    
-            <div>
-                <label for="horasTrabalhadas">Horas Trabalhadas:</label>
-                <input type="text" id="horasTrabalhadas" name="horasTrabalhadas">
-            </div>
-        </form>
-    </div>
+            <h1>Cadastro de Usuário</h1>
+            <form action="/funcionarios/" method="POST">
+                <div>
+                    <label for="nome">Nome: </label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div>
+                    <label for="categoria">Função:</label>
+                    <select id="categoria" name="categoriaId">
+                        <option value="Selecione">--Selecione--</option>
+                        <option value="1">G</option>
+                        <option value="2">F</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="turno">Turno:</label>
+                    <select id="turno" name="turnoId">
+                        <option value="Selecione">--Selecione--</option>
+                        <option value="1">M</option>
+                        <option value="2">V</option>
+                        <option value="3">N</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="horasTrabalhadas">Horas Trabalhadas:</label>
+                    <input type="text" id="horasTrabalhadas" name="horasTrabalhadas">
+                </div>
+                <div>
+                    <label for="salarioMinimo">Salario Minimo Estadual:</label>
+                    <input type="text" id="salarioMinimo" name="salarioMinimo">
+                </div>
+                <div>
+                    <button>Cadastrar</button>
+                </div>
+            </form>
+        </div>
 </body>
 
 </html>

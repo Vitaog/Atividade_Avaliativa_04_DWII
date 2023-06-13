@@ -13,28 +13,23 @@ app.use(bodyParser.json());
 
 (async () => {
     try {
-      const database = require('./db');
-      const Categoria = require('./models/categoria');
-      const Turno = require('./models/turno');
-      const Funcionario = require('./models/funcionario');
-      await database.sync();
-      
-      app.listen(3000, function(erro) {
-        if (erro) {
-          console.log('Ocorreu um erro');
-        } else {
-          console.log('Servidor iniciado com sucesso na porta 3000');
-        }
-      });
+        const database = require('./db');
+        const Categoria = require('./models/categoria');
+        const Turno = require('./models/turno');
+        const Funcionario = require('./models/funcionario');
+        await database.sync();
+
+        app.listen(3000, function (erro) {
+            if (erro) {
+                console.log('Ocorreu um erro');
+            } else {
+                console.log('Servidor iniciado com sucesso na porta 3000');
+            }
+        });
     } catch (error) {
-      console.error('Erro ao sincronizar o banco de dados:', error);
+        console.error('Erro ao sincronizar o banco de dados:', error);
     }
-  })();
-  
-  app.get('/', (req, res) => {
-    res.render("index");
-  });
-  
-  app.get('/cadastro', (req, res) => {
-    res.render("cadastro");
-  });
+})();
+
+const routes = require("./routes")
+app.use('/', routes);
