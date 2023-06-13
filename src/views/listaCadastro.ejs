@@ -28,6 +28,7 @@
                             <th>Valor Hora</th>
                             <th>Auxílio-Alimentação</th>
                             <th>Salario Final</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,6 +86,9 @@
                                                             R$ <%= funcionario.salarioInicial +
                                                                 (funcionario.salarioInicial * 0.15) %>,00
                                                                 <% } %>
+                                </td>
+                                <td>
+                                    <a href="/editarCadastro">Detalhes</a>
                                 </td>
                             </tr>
                             <% }); %>

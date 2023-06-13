@@ -27,4 +27,8 @@ router.get('/cadastro', (req, res) => {
     res.render("cadastro");
 });
 
+router.get('/editarCadastro', (req, res) => {
+    res.render("editarCadastro");
+})
+
 module.exports = router;
