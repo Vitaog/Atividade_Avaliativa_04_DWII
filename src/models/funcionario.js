@@ -43,6 +43,10 @@ const Funcionario = database.define(
       type: Sequelize.INTEGER,
       allowNull: false,
     },
+    salarioMinimo: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+    },
   },
   {
     timestamps: false,
