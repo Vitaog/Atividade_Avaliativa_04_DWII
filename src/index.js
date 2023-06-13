@@ -38,3 +38,7 @@ app.use(bodyParser.json());
   app.get('/cadastro', (req, res) => {
     res.render("cadastro");
   });
+
+  app.get('/listaCadastro', (req, res) => {
+    res.render("listaCadastro");
+  });

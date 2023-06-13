@@ -80,3 +80,20 @@ h1 {
     width: 170px;
     text-align: center;
 }
+
+.lista {
+    background-color: rgba(128, 128, 128, 0.644);
+    display: flex;
+    width: 100%;
+    border: solid 1px black;
+    margin: 1vh 0;
+}
+
+.lista > div {
+    width: 100%;
+    padding: 5px;
+}
+
+.lista > div > p {
+    margin: 5px 0;
+}
