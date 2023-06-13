@@ -14,6 +14,18 @@
     background-color: rgba(128, 128, 128, 0.728);
 }
 
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 95vh;
+}
+
+p {
+    font-size: 100px;
+}
+
 .li-nav {
     width: 10%;
     text-align: center;
