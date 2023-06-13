@@ -28,7 +28,7 @@ exports.cadastroFuncionario = async (req, res) => {
             valorHora,
         });
 
-        res.status(201).json(novoFuncionario);
+        res.redirect("/funcionarios");
     } catch (error) {
         res.status(500).json({ error: 'Erro ao criar o funcionário' });
     }
@@ -37,7 +37,7 @@ exports.cadastroFuncionario = async (req, res) => {
 exports.getFuncionarios = async (req, res) => {
     try {
         const funcionarios = await Funcionario.findAll();
-        res.send(funcionarios);
+        res.render("listaCadastro", {funcionarios: funcionarios});
     } catch (error) {
         res.status(500).send('Erro ao buscar os funcionários');
     }
