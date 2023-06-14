@@ -9,9 +9,9 @@ router.get("/funcionarios", funcionarioController.getFuncionarios);
 
 router.get("/funcionarios/:id", funcionarioController.getFuncionarioById);
 
-router.post("/funcionarios/", funcionarioController.cadastroFuncionario);
+router.post("/funcionarios", funcionarioController.cadastroFuncionario);
 
-router.put("/funcionarios/:id", funcionarioController.updateFuncionario);
+router.post("/funcionarios/:id", funcionarioController.updateFuncionario);
 
 router.delete("/funcionarios/:id", funcionarioController.deletarFuncionario);
 
@@ -27,8 +27,5 @@ router.get('/cadastro', (req, res) => {
     res.render("cadastro");
 });
 
-router.get('/editarCadastro', (req, res) => {
-    res.render("editarCadastro");
-})
 
 module.exports = router;

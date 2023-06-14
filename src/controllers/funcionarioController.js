@@ -53,7 +53,7 @@ exports.getFuncionarioById = async (req, res) => {
             return res.status(404).json({ error: 'Funcionário não encontrado' });
         }
 
-        res.status(200).send(funcionario);
+        res.render("editarCadastro", {funcionario: funcionario});
     } catch (error) {
         res.status(500).send({ error: 'Erro ao buscar o funcionário' });
     }
@@ -97,7 +97,7 @@ exports.updateFuncionario = async (req, res) => {
         // Salve as alterações no banco de dados
         await funcionario.save();
 
-        res.status(200).send(funcionario);
+        res.redirect("/funcionarios");
     } catch (error) {
         res.status(500).send({ error: 'Erro ao atualizar o funcionário' });
     }
