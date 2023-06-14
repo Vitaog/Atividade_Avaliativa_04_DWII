@@ -52,7 +52,9 @@
                     <button type="submit">Atualizar</button>
                 </div>
             </form>
-            <button class="btn-excluir">Excluir</button>
+            <form id="deleteForm">
+                <button class="btn-excluir">Excluir</button>
+            </form>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -89,6 +91,23 @@
                 } catch (error) {
                     console.error(error);
                     // window.location.href = "/funcionarios"
+                }
+            });
+        </script>
+        <script>
+            const deleteForm = document.getElementById('deleteForm');
+            deleteForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+        
+                const id = "<%= funcionario.id %>";
+                const link = `/funcionarios/${id}`;
+        
+                try {
+                    const response = await axios.delete(link);
+                    window.location.href = "/funcionarios";
+                    console.log(response.data);
+                } catch (error) {
+                    console.error(error);
                 }
             });
         </script>
