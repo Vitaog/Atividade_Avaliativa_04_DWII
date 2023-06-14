@@ -11,87 +11,87 @@
 <body>
     <%- include('partials/navbar') %>
 
-    <div class="container">
+        <div class="container">
 
-        <h1>Editar Funcionários</h1>
-        <form id="updateForm" action="/funcionarios/<%= funcionario.id %>" method="POST">
-            <div>
-                <label for="nome">Nome: </label>
-                <input type="text" id="nome" name="nome" value="<%=funcionario.nome %>" required>
-            </div>
+            <h1>Editar Funcionários</h1>
+            <form id="updateForm" method="POST">
+                <div>
+                    <label for="nome">Nome: </label>
+                    <input type="text" id="nome" name="nome" value="<%=funcionario.nome %>" required>
+                </div>
 
-            <div>
-                <label for="categoria">Função:</label>
-                <select id="categoria" name="categoriaId">
-                    <option value="Selecione">--Selecione--</option>
-                    <option value="1" <% if (funcionario.categoriaId===1) { %> selected <% } %>>G</option>
-                    <option value="2" <% if (funcionario.categoriaId===2) { %> selected <% } %>>F</option>
-                </select>
-            </div>
+                <div>
+                    <label for="categoria">Função:</label>
+                    <select id="categoria" name="categoriaId">
+                        <option value="Selecione">--Selecione--</option>
+                        <option value="1" <% if (funcionario.categoriaId===1) { %> selected <% } %>>G</option>
+                        <option value="2" <% if (funcionario.categoriaId===2) { %> selected <% } %>>F</option>
+                    </select>
+                </div>
 
-            <div>
-                <label for="turno">Turno:</label>
-                <select id="turno" name="turnoId">
-                    <option value="Selecione">--Selecione--</option>
-                    <option value="1" <% if (funcionario.turnoId===1) { %> selected <% } %>>M</option>
-                    <option value="2" <% if (funcionario.turnoId===2) { %> selected <% } %>>V</option>
-                    <option value="3" <% if (funcionario.turnoId===3) { %> selected <% } %>>N</option>
-                </select>
-            </div>
+                <div>
+                    <label for="turno">Turno:</label>
+                    <select id="turno" name="turnoId">
+                        <option value="Selecione">--Selecione--</option>
+                        <option value="1" <% if (funcionario.turnoId===1) { %> selected <% } %>>M</option>
+                        <option value="2" <% if (funcionario.turnoId===2) { %> selected <% } %>>V</option>
+                        <option value="3" <% if (funcionario.turnoId===3) { %> selected <% } %>>N</option>
+                    </select>
+                </div>
 
-            <div>
-                <label for="horasTrabalhadas">Horas Trabalhadas:</label>
-                <input type="text" id="horasTrabalhadas" name="horasTrabalhadas"
-                    value="<%= funcionario.horasTrabalhadas %>">
-            </div>
-            <div>
-                <label for="salarioMinimo">Salario Minimo Estadual:</label>
-                <input type="text" id="salarioMinimo" name="salarioMinimo" value="<%= funcionario.salarioMinimo %>">
-            </div>
-            <div class="div-btn">
-                <button type="submit">Atualizar</button>
-            </div>
-        </form>
-        <button class="btn-excluir">Excluir</button>
-    </div>
+                <div>
+                    <label for="horasTrabalhadas">Horas Trabalhadas:</label>
+                    <input type="text" id="horasTrabalhadas" name="horasTrabalhadas"
+                        value="<%= funcionario.horasTrabalhadas %>">
+                </div>
+                <div>
+                    <label for="salarioMinimo">Salario Minimo Estadual:</label>
+                    <input type="text" id="salarioMinimo" name="salarioMinimo" value="<%= funcionario.salarioMinimo %>">
+                </div>
+                <div class="div-btn">
+                    <button type="submit">Atualizar</button>
+                </div>
+            </form>
+            <button class="btn-excluir">Excluir</button>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-        const form = document.getElementById('updateForm');
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const id = "<%= funcionario.id %>";
-            const nome = document.getElementById('nome').value;
-            const categoriaId = document.getElementById('categoriaId').value;
-            const turnoId = document.getElementById('turnoId').value;
-            const horasTrabalhadas = document.getElementById('horasTrabalhadas').value;
-            const salarioMinimo = document.getElementById('salarioMinimo').value;
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            const form = document.getElementById('updateForm');
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
 
-            const link = `/funcionarios/${id}`;
+                const id = "<%= funcionario.id %>";
+                const nome = document.getElementById('nome').value;
+                const categoriaId = document.getElementById('categoria').value;
+                const turnoId = document.getElementById('turno').value;
+                const horasTrabalhadas = document.getElementById('horasTrabalhadas').value;
+                const salarioMinimo = document.getElementById('salarioMinimo').value;
 
-            try {
-                const response = await axios.put(link, {
-                    nome,
-                    categoriaId,
-                    turnoId,
-                    horasTrabalhadas,
-                    salarioMinimo,
+                const link = `/funcionarios/${id}`;
+
+                try {
+                    const response = await axios.put(link, {
+                        nome,
+                        categoriaId,
+                        turnoId,
+                        horasTrabalhadas,
+                        salarioMinimo,
                     }, {
-                    headers: {
-                        'Content-Type': 'multipart/form-data'
-                    },
-                });
-                window.location.href = "/funcionarios"
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                    });
+                    window.location.href = "/funcionarios"
 
-                // Processar a resposta ou redirecionar para outra página, se necessário
-                console.log(response.data);
-            } catch (error) {
-                console.error(error);
-                window.location.href = "/funcionarios"
-            }
-        });
-    </script>
+                    // Processar a resposta ou redirecionar para outra página, se necessário
+                    console.log(response.data);
+                } catch (error) {
+                    console.error(error);
+                    // window.location.href = "/funcionarios"
+                }
+            });
+        </script>
 </body>
 
 </html>

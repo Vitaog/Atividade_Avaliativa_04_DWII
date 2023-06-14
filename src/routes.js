@@ -11,7 +11,7 @@ router.get("/funcionarios/:id", funcionarioController.getFuncionarioById);
 
 router.post("/funcionarios", funcionarioController.cadastroFuncionario);
 
-router.post("/funcionarios/:id", funcionarioController.updateFuncionario);
+router.put("/funcionarios/:id", funcionarioController.updateFuncionario);
 
 router.delete("/funcionarios/:id", funcionarioController.deletarFuncionario);
 
